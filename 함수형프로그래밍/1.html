@@ -1,0 +1,128 @@
+<script>
+  const log = console.log;
+</script>
+
+# 평가 - 코드가 계산(Evaluation)되어 값을 만드는 것 ㅍ # 일급 - 값으로 다룰 수
+있다. - 변수에 담을 수 있다. - 함수의 인자로 사용될 수 있다. - 함수의 결과로
+사용될 수 있다.
+
+<!-- <script>
+  const a = 10;
+  const add10 = (a) => a + 10;
+  const r = add10(a);
+  log(r);
+</script> -->
+
+# 일급 함수 - 함수를 값으로 다룰 수 있다. - 조합성과 추상화의 도구
+
+<!-- <script>
+  const add5 = (a) => a + 5;
+  log(add5);
+  log(add5(5)); -->
+
+<!-- <script>
+  const f1 = () => () => 1;
+  console.log(f1()); // ()=>1
+  console.log(f1()()); // 1
+
+  const f2 = f1();
+  console.log(f2());
+</script>
+
+<script>
+  const apply1 = (f) => f(1);
+  const add2 = (a) => a + 2;
+  log(apply1(add2)); // 3
+  log(apply1((a) => a - 1)); // 0
+  log(apply1((a) => a * a)); // 1
+</script> -->
+
+<!-- <script>
+  const times = (f, n) => {
+    let i = -1;
+    while (++i < n) f(i);
+  };
+  times(log, 3);
+  times((a) => log("a+1 : ", a + 10), 3);
+</script> -->
+
+<!-- <script>
+  const addMaker = (a) => (b) => a + b;
+  const add10 = addMaker(10);
+  log(add10); // (b)=>a+b;
+  log(add10(1)); // 11
+  log(add10(5)); // 15
+</script> -->
+
+<!-- <script>
+  const list = [1, 2, 3];
+  for (let i = 0; i < list.length; i++) {
+    log(list[i]);
+    // 1
+    // 2
+    // 3
+  }
+  
+</script> -->
+<!-- <script>
+  const str = "abc";
+  for (let i = 0; i < str.length; i++) {
+    log(str[i]);
+    // a
+    // b
+    // c
+  }
+</script> -->
+<!-- <script>
+  const list = [1, 2, 3];
+  for (const a of list) {
+    log(a);
+    // 1
+    // 2
+    // 3
+  }
+  const str = "abc";
+  for (const a of str) {
+    log(a);
+    // a
+    // b
+    // c
+  }
+</script> -->
+
+<script>
+  const arr = [1, 2, 3];
+  for (const a of arr) {
+    log(a);
+    // 1
+    // 2
+    // 3
+  }
+</script>
+
+<script>
+  const set = new Set([1, 2, 3]);
+  for (const a of set) {
+    log(a);
+    // 1
+    // 2
+    // 3
+  }
+  log(set[0]); // undefined
+</script>
+
+<script>
+  const map = new Map([
+    ["a", 1],
+    ["b", 2],
+    ["c", 3],
+    ["a", 4],
+  ]);
+  for (const a of map) {
+    log(a);
+    // (2) ["a", 1]
+    // (2) ["b", 2]
+    // (2) ["c", 3]
+  }
+  log(map[0]); // undefined
+</script>
